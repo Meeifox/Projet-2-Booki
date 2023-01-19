@@ -5,10 +5,6 @@ html {
 	justify-content: center;
 }
 
-a {
-	text-decoration: none;
-}
-
 body {
 	min-height: 100%;
 	max-width: 1400px ;
@@ -16,11 +12,11 @@ body {
 	display: flex;
 	flex-direction: column; 
 	justify-content: center;
-	margin: 0 2% 0 2%;
-	font-family: Raleway;
+	margin: 0 2% 0 2%;	
 	box-sizing: border-box;
 	position: relative;
-	
+	font-family: Raleway;
+	font-style: normal;
 }
 
 footer {
@@ -33,23 +29,30 @@ footer {
 }
 
 h1 {
-	font-weight: 700;
 	font-size: 22px;
 	line-height: 26px;
-	margin :0;
-}
-
-h2, #site-search, #button-search {
-	font-size: 18px;
 	font-weight: 700;
-	line-height: 21px;
+	margin: 0;
 }
 
-h3 {
+h2 {
+	font-size: 22px;
+	line-height: 26px;
+	font-weight: 700;
+	margin : 0;
+}
+
+h3,#site-search, #button-search{
 	font-size: 16px;
-	font-weight: 400;
 	line-height: 19px;
-	margin: 0;	
+	margin: 0;
+}
+
+h4 {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 16px;
+	margin: 0;
 }
 
 header {
@@ -59,19 +62,13 @@ header {
 	padding-top: 50px;
 }
 
-li {
-	display: flex;
-	list-style: none;
-	
+.no-style {
+	list-style-type: none;
 }
 
-p {
-	margin: 0;
-	font-size: 14px;
-	font-weight: 400;
-	line-height: 17px;
+.text-decoration-none {
+	text-decoration: none;
 }
-
 
 @media screen and (max-width : 992px) {
 	body {
@@ -86,10 +83,22 @@ p {
 		align-self: center;
 		padding: 1%;
 	}
-	header {	
-		padding: 0;
-		margin: 0;
+	h2 {
+		font-size-adjust: 80%;
+		margin-left : 1%;
 	}
+	
+	h3,#site-search, #button-search{
+		font-size-adjust: 80%;
+		margin-left: 1%;
+	}
+	
+	h4 {
+		font-size-adjust: 80%;
+		margin-left: 1%;
+	}
+
+
 	
 }
 /*Side menu*/
@@ -102,9 +111,8 @@ p {
 	display: inline-flex;
 	justify-content: space-between;
 	position: absolute;
-	top: 0;
-	right: 2px;
-	
+	top: -16px;
+	right: 2px;	
 }
 
 .nav-link a{
@@ -129,8 +137,15 @@ p {
 }
 .nav-link a:hover{
 	color: #0065FC ;
-	border-top: 3px solid #0065FC;
-	
+	border-top: 3px solid #0065FC;	
+}
+
+.nav-link ul {
+	display: inline-flex;
+}
+
+.nav-link h3 {
+	font-weight: 400;
 }
 
 @media screen and (max-width : 992px) {
@@ -164,11 +179,16 @@ p {
 		border-bottom: 3px solid #ffffff;
 		border-top : none;
 	}
-	
+	.nav-link ul {
+		padding-left: 0;
+		margin-left: 0;
+		display: flex;
+		width: 100%;
+	}
 	.nav-link li {
 		display: flex;
 		justify-content: center;
-		border-bottom: 3px solid #ffffff;
+		border-bottom: 3px solid #D9D9D9;
 		border-top : none;
 		width: 100%;
 	}
@@ -187,13 +207,17 @@ p {
 
 /*Search module*/
 #top-content {
-	margin-top: 63px;
+	padding: 2%;
 }
 
 #top-content > div:first-of-type {
 	margin-bottom: 8px;
 }
 
+#top-content h3 {
+	margin: 10px 0 10px 0;
+	font-weight: 400;
+}
 .search-container {
 	display: inline-flex;	
 	height: 49px;
@@ -217,11 +241,12 @@ p {
 	align-items: center;
 }
 
-.search-rectangle #site-search {
+#site-search {
 	width: 231px;
 	height: 47px;
 	border : 0;
 	outline : 1px solid #D9D9D9;
+	font-weight: 700;
 }
 
 .search-rectangle .button-search {
@@ -271,6 +296,8 @@ p {
 	.search-rectangle #site-search {
 		min-width: 140px;
 		width: 100%;
+		margin: 0;
+		padding: 0;
 	}
 	.search-rectangle #text-search {
 		display: none;
@@ -288,7 +315,7 @@ p {
 .browsing {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 20px;
+	gap: 10px;
 	
 	cursor: pointer;
 	margin-left: 10px;
@@ -300,8 +327,7 @@ p {
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
-	
-	
+		
 	cursor: pointer;
 	
 	border : 1px solid #D9D9D9;
@@ -333,33 +359,27 @@ p {
 	color: #0065FC;
 }
 
-.browsing p {
-	font-weight: 700;
-	line-height: 21px;
-}
-
 @media screen and (max-width: 768px) {
 	.browsing-nav {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+
 	}
 	
 	.browsing-nav h2 {
+		margin-bottom: 10px;
 		align-self: flex-start;
 	}
-	
+
 	.browsing {
-		justify-content: center;
-		max-width: 320px;
-		margin: 0;
-		gap: 10px 10px;
+		min-width: 320px;
+
 	}
 	.browsing .filter-button {	
 		width: 150px;
 		height: 50px;
 		font-weight: 700;
-		font-size: 11px;
 		line-height: 13px;
 	}
 	
@@ -368,19 +388,13 @@ p {
 
 /*tooltip*/
 
-.info{
-	display: flex;
-	align-items: center;
-	margin-top: 38px;
-	margin-bottom: 39px;
-	margin-left: 4px;
-}
-.info .i-circle {
-	margin-right: 20px;
+.i-circle {
+	display: inline-flex;
+	margin: 20px 0 20px 0;
 }
 
 .i-circle i {
-	display: flex;
+	display: inline-flex;
 	justify-content: center;
 	align-items: center;
 	
@@ -393,6 +407,15 @@ p {
 	border-color:#D9D9D9;
 	background-color: #FFF ;
 	box-sizing: border-box;
+	margin-right: 12px;
+}
+
+@media screen and (max width : 768px) {
+	.i-circle i	{
+		height: 24px;
+		width: 24px;
+		font-size-adjust: 80%;
+	}
 }
 
 /*end tooltip*/
@@ -402,7 +425,7 @@ p {
 /*Body */
 
 
-.content {
+#content {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -539,9 +562,10 @@ p {
 .description-accommodation {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: space-around;
 	margin-top: 4px;
 	margin-left: 16px;
+	height: 67px;
 }
 
 .description-accommodation h3 {
@@ -556,6 +580,7 @@ p {
 	display: flex;
 	width: fit-content;
 	flex-grow: 1;
+	margin-top: 20px;
 }
 
 .displaymore-widget:hover{
@@ -581,8 +606,8 @@ p {
 		
 		padding: 0;
 		padding-top: 10px;
-		
 	}
+
 	#thumbnail-accommodation {
 		display: flex;
 		flex-direction: column;
@@ -592,6 +617,10 @@ p {
 	.rectangle-accommodation {
 		min-width: 300px;
 		max-width: 335px;
+	}
+
+	.displaymore-widget  {
+		width: initial;
 	}
 	
 	
@@ -664,7 +693,7 @@ p {
 .description-popular {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: space-around;
 	
 	margin: 1% 2% 1% 2%;
 }
@@ -713,9 +742,14 @@ p {
 	}
 }
 /* End popular */
-#widget-activity {
-	background-color : #FFF;
+.basic-white-widget {
+	display: flex;
 	width: 100%;
+	background-color : #FFF;
+}
+
+#widget-activity {
+		width: 100%;
 	margin-top: 60px;
 	margin-bottom: 61px;
 }
@@ -844,6 +878,12 @@ p {
 	color: #000;
 	text-decoration: none;
 }
+
+.information-footer-colonne h3 {
+	font-weight: 400;
+}
+
+
 @media screen and (max-width:768px){
 	footer{
 		height: 100%;
