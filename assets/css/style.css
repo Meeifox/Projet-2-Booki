@@ -100,9 +100,6 @@ header {
 		font-size-adjust: 80%;
 		margin-left: 1%;
 	}
-
-
-	
 }
 /*Side menu*/
 #logo-booki {
@@ -141,6 +138,7 @@ header {
 .nav-link a:hover{
 	color: #0065FC ;
 	border-top: 3px solid #0065FC;	
+	font-weight: 500;
 }
 
 .nav-link ul {
@@ -151,15 +149,7 @@ header {
 	font-weight: 400;
 }
 
-@media screen and (max-width : 992px) {
-	.nav-link {
-		right:-1% ;
-		
-	}
-}
-
-@media screen and (max-width:768px) {
-	
+@media screen and (max-width:768px) {	
 	header {
 		padding-top: 21px;
 	}
@@ -388,6 +378,7 @@ header {
 
 .i-circle {
 	display: inline-flex;
+	align-items: baseline;
 	margin: 20px 0 20px 0;
 }
 
@@ -410,8 +401,7 @@ header {
 
 @media screen and (max-width : 768px) {
 	.i-circle i	{
-		height: 24px;
-		width: 24px;
+		min-width: 24px;
 		font-size-adjust: 80%;
 	}
 }
@@ -616,8 +606,6 @@ header {
 	.displaymore-widget  {
 		width: initial;
 	}
-	
-	
 }
 /* End accommodation */
 
@@ -742,7 +730,7 @@ header {
 }
 
 #widget-activity {
-		width: 100%;
+	width: 100%;
 	margin-top: 60px;
 	margin-bottom: 61px;
 }
@@ -839,7 +827,7 @@ header {
 		max-height: none;
 	}
 	
-	#widget-activity > h1 {
+	#widget-activity > h2 {
 		width: 110px;
 		display : -webkit-box ;
 		-webkit-line-clamp: 2;
