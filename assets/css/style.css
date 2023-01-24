@@ -87,17 +87,14 @@ header {
 		padding: 1%;
 	}
 	h2 {
-		font-size-adjust: 80%;
 		margin-left : 1%;
 	}
 	
 	h3,#site-search, #button-search{
-		font-size-adjust: 80%;
 		margin-left: 1%;
 	}
 	
 	h4 {
-		font-size-adjust: 80%;
 		margin-left: 1%;
 	}
 }
@@ -402,7 +399,6 @@ header {
 @media screen and (max-width : 768px) {
 	.i-circle i	{
 		min-width: 24px;
-		font-size-adjust: 80%;
 	}
 }
 
